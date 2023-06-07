@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter, Routes, Route } from "react-router-dom";
+import { Dashboard } from "./dashboard";
+import { Blogpage } from "./blogpage";
+import { Contactpoint } from "./contactpoint";
+import { Sitemap } from "./sitemap";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HashRouter>
+        <Sitemap />
+        <Routes>
+          <Route path="/" element={<Dashboard/>}/>
+          <Route path="/blogpage" element={<Blogpage/>}/>
+          <Route path="/contactpoint" element={<Contactpoint/>}/>
+          <Route path="*" element={<p>Not found</p>}/>
+        </Routes>
+      </HashRouter>
+    </>
   );
 }
 
