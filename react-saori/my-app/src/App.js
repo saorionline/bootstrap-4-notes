@@ -1,9 +1,10 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
+import { Sitemap } from "./sitemap";
+import { Blendpage } from "./pages/blend";
+import { Blendpost } from "./posts/blendpost";
 import { Dashboard } from "./dashboard";
 import { Blogpage } from "./blogpage";
 import { Contactpoint } from "./contactpoint";
-import { Sitemap } from "./sitemap";
-import { Blendpage } from "./pages/blend";
 import { Singleorigin } from "./pages/single";
 import { Kit } from "./pages/kit";
 import { Coldbred } from "./pages/coldbred";
@@ -18,7 +19,8 @@ function App() {
         <Sitemap />
         <Routes>
           <Route path="/" element={<Dashboard/>}/>
-          <Route path="/pages/blend" element={<Blendpage/>}/>
+          <Route path="pages/blend" element={<Blendpage/>}/>
+          <Route path="pages/blend/:slog" element={<Blendpost/>}/>
           <Route path="/pages/single" element={<Singleorigin/>}/>
           <Route path="/pages/kit" element={<Kit/>}/>
           <Route path="/pages/coldbred" element={<Coldbred/>}/>   

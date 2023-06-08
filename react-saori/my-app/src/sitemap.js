@@ -10,7 +10,7 @@ function Sitemap() {
                         
                     <NavLink 
                       style={({ isActive}) => ({
-                        color: isActive ? 'salmon' : 'pink',
+                        color: isActive ? "salmon" : "pink",
                         })}
                         to={route.to}
                         >
@@ -32,19 +32,19 @@ routes.push({
     text: "Blends",
 });
 routes.push({
-    to: "/pages/single",
+    to: "/single",
     text: "Single Origin",
 });
 routes.push({
-    to: "/pages/coldbred",
+    to: "/coldbred",
     text: "Cold Bred",
 });
 routes.push({
-    to: "/pages/kit",
+    to: "/kit",
     text: "Kits",
 });
 routes.push({
-    to: "/pages/barista",
+    to: "/barista",
     text: "Barista",
 });
 
