@@ -1,5 +1,7 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { Sitemap } from "./sitemap";
+import { AuthProvider } from "./auth";
+import { Profile } from "./profile";
 import { Blendpage } from "./pages/blend";
 import { Blendpost } from "./posts/blendpost";
 import { Dashboard } from "./dashboard";
@@ -18,14 +20,16 @@ function App() {
   return (
     <>
       <HashRouter>
+        <AuthProvider>
         <Sitemap />
         <Routes>
           <Route path="/" element={<Dashboard/>}/>
           <Route path="pages/blend" element={<Blendpage/>}>
             <Route path=":slog" element={<Blendpost/>}/>
           </Route>
-          <Route path="/login" elements={<Login/>}/>
-          <Route path="/logout" elements={<Logout/>}/>          
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/logout" element={<Logout/>}/>
+          <Route path="/profile" element={<Profile/>}/>          
           <Route path="/pages/single" element={<Singleorigin/>}/>
           <Route path="/pages/kit" element={<Kit/>}/>
           <Route path="/pages/coldbred" element={<Coldbred/>}/>   
@@ -34,6 +38,7 @@ function App() {
           <Route path="/contactpoint" element={<Contactpoint/>}/>
           <Route path="*" element={<p>Not found</p>}/>
         </Routes>
+        </AuthProvider>
       </HashRouter>
     </>
   );

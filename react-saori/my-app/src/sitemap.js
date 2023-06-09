@@ -47,5 +47,16 @@ routes.push({
     to: "/pages/barista",
     text: "Barista",
 });
-
+routes.push({
+    to: "/login",
+    text: "Registro",
+});
+routes.push({
+    to: "/logout",
+    text: "Cerrar Sesión",
+});
+routes.push({
+    to: "/profile",
+    text: "Profile",
+})
 export {Sitemap};
