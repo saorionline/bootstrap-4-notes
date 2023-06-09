@@ -1,7 +1,9 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { Sitemap } from "./sitemap";
-import { AuthProvider } from "./auth";
+import { AuthProvider, AuthRoute } from "./auth";
 import { Profile } from "./profile";
+import { Login } from "./login";
+import { Logout } from "./logout";
 import { Blendpage } from "./pages/blend";
 import { Blendpost } from "./posts/blendpost";
 import { Dashboard } from "./dashboard";
@@ -11,8 +13,6 @@ import { Singleorigin } from "./pages/single";
 import { Kit } from "./pages/kit";
 import { Coldbred } from "./pages/coldbred";
 import { Barista } from "./pages/barista";
-import { Login } from "./login";
-import { Logout } from "./logout";
 
 
 
@@ -28,8 +28,22 @@ function App() {
             <Route path=":slog" element={<Blendpost/>}/>
           </Route>
           <Route path="/login" element={<Login/>}/>
-          <Route path="/logout" element={<Logout/>}/>
-          <Route path="/profile" element={<Profile/>}/>          
+          <Route 
+            path="/logout" 
+            element={
+              <AuthRoute>
+                <Logout/>
+              </AuthRoute>
+            }
+          />
+          <Route 
+            path="/profile" 
+            element={
+              <AuthRoute>
+                <Profile/>
+              </AuthRoute>
+            }
+          />          
           <Route path="/pages/single" element={<Singleorigin/>}/>
           <Route path="/pages/kit" element={<Kit/>}/>
           <Route path="/pages/coldbred" element={<Coldbred/>}/>   
