@@ -9,6 +9,8 @@ import { Singleorigin } from "./pages/single";
 import { Kit } from "./pages/kit";
 import { Coldbred } from "./pages/coldbred";
 import { Barista } from "./pages/barista";
+import { Login } from "./login";
+import { Logout } from "./logout";
 
 
 
@@ -19,8 +21,11 @@ function App() {
         <Sitemap />
         <Routes>
           <Route path="/" element={<Dashboard/>}/>
-          <Route path="pages/blend" element={<Blendpage/>}/>
-          <Route path="pages/blend/:slog" element={<Blendpost/>}/>
+          <Route path="pages/blend" element={<Blendpage/>}>
+            <Route path=":slog" element={<Blendpost/>}/>
+          </Route>
+          <Route path="/login" elements={<Login/>}/>
+          <Route path="/logout" elements={<Logout/>}/>          
           <Route path="/pages/single" element={<Singleorigin/>}/>
           <Route path="/pages/kit" element={<Kit/>}/>
           <Route path="/pages/coldbred" element={<Coldbred/>}/>   
