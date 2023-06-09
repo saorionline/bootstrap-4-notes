@@ -8,7 +8,7 @@ function Blendpage() {
         <h1>Extraer sabor</h1>
         <ul>
             { blendata.map ( post => (
-                <BlendLink post = { post }/>
+                <BlendLink key= { post.slog } post= { post }/>
             ))}
         </ul>
         </>
@@ -18,8 +18,8 @@ function Blendpage() {
 function BlendLink ({ post }) {
     return (
         <li>
-            <Link to= {`/blend/${post.slog}`} > { post.title } </Link>
+            <Link to= {`${post.slog}`} > { post.title } </Link>
         </li>
     );
 }
-export {Blendpage}
+export {Blendpage};

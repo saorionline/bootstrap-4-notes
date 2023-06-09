@@ -11,7 +11,6 @@ function Blendpost() {
             <h2>{blendpost.title}</h2>
             <p>{blendpost.content}</p>
             <p>{blendpost.date}</p>
-
         </>
     )
 }

@@ -6,7 +6,7 @@ function Sitemap() {
         <nav>
             <ul>
                 {routes.map(route => (
-                    <li>
+                    <li key= {route.to}>
                         
                     <NavLink 
                       style={({ isActive}) => ({
@@ -32,20 +32,20 @@ routes.push({
     text: "Blends",
 });
 routes.push({
-    to: "/single",
+    to: "/pages/single",
     text: "Single Origin",
 });
 routes.push({
-    to: "/coldbred",
+    to: "/pages/coldbred",
     text: "Cold Bred",
 });
 routes.push({
-    to: "/kit",
+    to: "/pages/kit",
     text: "Kits",
 });
 routes.push({
-    to: "/barista",
+    to: "/pages/barista",
     text: "Barista",
 });
 
-export {Sitemap}
+export {Sitemap};
